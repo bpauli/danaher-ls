@@ -1,35 +1,49 @@
-.cards > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
-  grid-gap: 16px;
-}
-
-.cards > ul > li {
-  border: 1px solid var(--dark-color);
-  background-color: var(--background-color)
-}
-
-.cards .cards-card-body {
-  margin: 16px;
-}
-
-.cards .cards-card-image p {
-  margin: 0;
-}
-
-.cards .cards-card-image {
-  line-height: 0;
-}
-
 .cards .cards-card-body > *:first-child {
-  margin-top: 0;
+  @apply mt-0;
 }
 
-.cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.cards .card-wrapper img {
+  @apply h-48 w-full object-cover rounded-t;
+}
+
+.cards-card-body > h3 {
+  @apply text-lg font-semibold text-danahergray-900 mb-4 line-clamp-3 h-20 break-words;
+}
+
+.cards-card-body > p {
+  @apply text-sm text-gray-500 pt-0 pb-4 line-clamp-4 h-20 break-words;
+}
+
+/* Opco cards */
+
+.cards.opco ul {
+  @apply gap-x-8 gap-y-16;
+}
+
+.cards.opco li {
+  @apply pl-8 pr-2 border-l-[0.5px] border-gray-300;
+}
+
+.cards.opco .card-wrapper {
+  @apply transform transition duration-500 hover:scale-105;
+}
+
+.cards.opco .cards-card-body {
+  @apply px-0 py-2;
+}
+
+.cards.opco .cards-card-body > h3 {
+  @apply mt-4 h-16 text-2xl font-normal;
+}
+
+.cards.opco .cards-card-body > p {
+  @apply h-[120px] line-clamp-6 pb-0 mb-4 text-danahergray-900 font-extralight;
+}
+
+.cards.opco .cards-card-body > a {
+  @apply text-danaherpurple-500;
+}
+
+.cards.opco .cards-card-image img {
+  @apply object-contain;
 }
